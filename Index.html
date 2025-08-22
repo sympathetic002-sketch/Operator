@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ระบบรันเคสตามคิว (นุ่มมินิมอล)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h1>📝 เพิ่มชื่อเพื่อรันเคส</h1>
+
+  <div class="input-area">
+    <input type="text" id="nameInput" placeholder="กรอกชื่อ..." autocomplete="off" />
+    <button onclick="addName()">➕ เพิ่ม</button>
+  </div>
+
+  <!-- 🆕 ปุ่มซ่อน/แสดงคิว -->
+  <div class="toggle-queue-btn">
+    <button onclick="toggleQueue()">🙈 ซ่อนคิว</button>
+  </div>
+
+  <!-- แสดงรายชื่อในคิว -->
+  <div id="queueList" class="queue-list"></div>
+
+  <div id="currentName">ถึงคิวคุณ: -</div>
+
+  <div class="controls">
+    <button onclick="runNext()">▶️ รันถัดไป</button>
+    <button class="danger" onclick="resetAll()">🧼 รีเซ็ต</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

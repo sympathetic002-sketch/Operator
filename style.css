@@ -1,0 +1,211 @@
+:root {
+  --bg: #f9fafb;
+  --card-bg: #ffffff;
+  --primary: #6c63ff;
+  --primary-light: #a29bff;
+  --primary-dark: #4e47d8;
+  --danger: #ff6b6b;
+  --danger-dark: #e94e4e;
+  --text-primary: #2e2e3a;
+  --text-secondary: #7a7a89;
+  --shadow-light: rgba(108, 99, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  letter-spacing: 0.03em;
+  color: var(--primary-dark);
+}
+
+.input-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 480px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  min-width: 200px;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  border: 2px solid var(--primary-light);
+  border-radius: 14px;
+  transition: border-color 0.3s ease;
+  box-shadow: 0 4px 8px var(--shadow-light);
+  outline-offset: 3px;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary-dark);
+  box-shadow: 0 6px 15px var(--shadow-light);
+}
+
+button {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  border: none;
+  border-radius: 14px;
+  padding: 14px 28px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 18px var(--shadow-light);
+  transition: all 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+  box-shadow: 0 12px 25px var(--shadow-light);
+  transform: translateY(-3px) scale(1.05);
+}
+
+button:active {
+  box-shadow: 0 4px 10px var(--shadow-light);
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+button.danger {
+  background: linear-gradient(135deg, var(--danger), var(--danger-dark));
+  box-shadow: 0 8px 18px rgba(255, 107, 107, 0.3);
+}
+
+button.danger:hover {
+  background: linear-gradient(135deg, var(--danger-dark), var(--danger));
+  box-shadow: 0 12px 25px rgba(255, 107, 107, 0.5);
+  transform: translateY(-3px) scale(1.05);
+}
+
+#currentName {
+  margin-top: 120px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: var(--card-bg);
+  padding: 40px 60px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  min-width: 360px;
+  text-align: center;
+  color: var(--primary-dark);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease;
+}
+
+.controls {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 480px;
+}
+
+.queue-list {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 10px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.queue-item {
+  background: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.queue-item button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--danger-dark);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.queue-item button:hover {
+  color: var(--danger);
+}
+
+.toggle-queue-btn {
+  margin-bottom: 5px;
+}
+
+.queue-list.hidden {
+  display: none;
+}
+
+.toggle-queue-btn button {
+  background: none;
+  border: none;
+  color: var(--primary-dark);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s ease;
+}
+
+.toggle-queue-btn button:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 480px) {
+  #currentName {
+    font-size: 2.2rem;
+    padding: 30px 25px;
+    min-width: 280px;
+  }
+
+  button, input[type="text"] {
+    min-width: 100%;
+  }
+
+  .controls {
+    gap: 15px;
+  }
+}
